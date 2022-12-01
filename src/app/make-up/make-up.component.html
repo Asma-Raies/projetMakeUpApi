@@ -1,0 +1,31 @@
+<body class="bg-dark">
+   
+
+    <div class="container">
+        <div class="card shadow mb-4  bg-dark">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tr class="text-white">
+                        <th>reference</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>quantite</th>
+                        <th>marque </th>
+                    </tr>
+                    <tbody *ngFor="let makeUp of MakeUp">
+                        <tr class="text-white">
+                            <td>{{makeUp.referenceMakeUp}}</td>
+                            <td>{{makeUp.nomMakeUp}}</td>
+                            <td>{{makeUp.prixMakeUp}}</td>
+                            <td>{{makeUp.quantiteMakeUp}}</td>
+                            <td>{{makeUp.marqueMakeUp}}</td>
+                            <td><a class="btn btn-danger" (click)="supprimerMakeUp(makeUp)">Supprimer</a></td>
+                            <td><a class="btn btn-success" [routerLink]="['/updateMakeUp',makeUp.referenceMakeUp]">Modifier</a></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
